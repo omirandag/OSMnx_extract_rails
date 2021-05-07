@@ -1,9 +1,6 @@
 # Metodología
 
-## Objetivo:
-
-Explicar la metodología efectuada para la extraccción de redes de carreteras, mediante la librería OSMNx. 
-
+## Objetivo: Explicar la metodología efectuada para la extraccción de redes de carreteras, mediante la librería OSMNx. 
 ## Requerimientos:
 
 - Python 3.8 
@@ -15,7 +12,6 @@ Explicar la metodología efectuada para la extraccción de redes de carreteras, 
 - Matplotlib
 
 ## 1. Instalación
-
 Inicialmnete, se debe descargar [miniconda](https://docs.conda.io/en/latest/miniconda.html). Una vez instalado, se deberá acceder al promt (*Anaconda promt*) y teclear el siguiente codigo:
 
 ~~~
@@ -30,12 +26,13 @@ Esto instala `OSMnx` y `JupyterLab` en un entorno conda llamado `ox`, activa el 
 [(Boeing, 2020)](https://stackoverflow.com/questions/59603695/osmnx-wont-open-in-juypter-notebook/62180703#62180703).
 
 ## 2. Extraer redes de calles mediante la librería OSMNx
-
 Para poder extraer las redes de carretear mediante el uso de la librería `osmnx` es necesario importar las siguientes librerías: 
+
 ``` python 
 import geopandas as gpd
 import osmnx as ox
 ```
+
 Aunque existen diversas formas para extraer las redes de carreteras [(Boeing, 2016)](https://geoffboeing.com/2016/11/osmnx-python-street-networks/), el presente trabajo optó por descargar dichas redes mediante el uso de un poligono predeterminado `ox.graph_from_polygon()`. Entonces, se emplearon poligonos correspondientes a las 74 zonas metropolitanas de México [(Conapo, 2010)](https://www.gob.mx/conapo/documentos/delimitacion-de-las-zonas-metropolitanas-de-mexico-2015). Los cuales fueron delimitados mediante el uso del *software* QSIG 3.10 y exportados en formato *.geojson*. 
 
 Posteriormente, todos los archivos fueron guardados en una carpeta en la raíz de *C://* para ser leidos en *Jupyter Lab* mediante el código `gpd.read_file()`.  Cabe señalar, que para asignar la ruta los archivos *.geojson*, es importante cambiar los signos "\\" por "/". 
@@ -46,6 +43,7 @@ Ahora, una vez recopilada esa información, se procedió en *Jupyter Lab* a extr
 Aguascalientes = gpd.read_file("C:/Analisis_redes_ZZ_MM/JSON/ZM_Aguascalientes.geojson")
 ZM_Aguascalientes = Aguascalientes["geometry"].iloc[0] 
 ```
+
 El código anterior, sirvió para asignar los poligonos que se utilizarán para extraer el grafo que contiene las redes de vialidades. Cabe resaltar que OSMNx permite extraer diferentes tipos de redes [(Boeing, 2021)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/03-graph-place-queries.ipynb).
 
 - `drive`: obtiene calles públicas manejables (pero no carreteras de servicio).
@@ -65,6 +63,3 @@ Finalmente, una vez descargado el *grafo* se procedió a guardarlo  mediante el 
 ``` python 
 ox.save_graphml(G_Aguascalientes, "G_Aguascalientes.graphml", gephi= True)
 ```
-
-
-
