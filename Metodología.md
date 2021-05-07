@@ -1,6 +1,6 @@
 # Metodología
 
-## Objetivo: Explicar la metodología efectuada para la extraccción de redes de carreteras, mediante la librería OSMNx. 
+## Objetivo: Explicar la metodología para extaer redes de carreteras mediante la librería *OSMNx*. 
 ## Requerimientos:
 
 - Python 3.8 
