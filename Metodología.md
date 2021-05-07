@@ -2,7 +2,7 @@
 
 ## Objetivo:
 
-Explicar el procesos metodologico efectuado para la extraccción de redes de carreteras medinte el uso de la librería OSMNx. 
+Explicar la metodología efectuada para la extraccción de redes de carreteras, mediante la librería OSMNx. 
 
 ## Requerimientos:
 
