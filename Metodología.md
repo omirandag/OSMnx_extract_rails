@@ -23,7 +23,7 @@ conda config --prepend channels conda-forge
 conda create -n ox --strict-channel-priority osmnx 
 ~~~
 
-Si se quiere instalar ´jupyterlab´ solo agrega el nombre después de ´osmnx´[Boeing, 2021](https://osmnx.readthedocs.io/en/stable/)
+Si se quiere instalar `jupyterlab` solo agrega el nombre después de `osmnx`[Boeing, 2021](https://osmnx.readthedocs.io/en/stable/)
 
 ~~~
 python -m ipykernel install --user --name ox --display-name "OSMNX"
