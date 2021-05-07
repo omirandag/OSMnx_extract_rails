@@ -12,7 +12,7 @@
 - Matplotlib
 
 ## 1. Instalación
-Inicialmnete, se debe descargar [miniconda](https://docs.conda.io/en/latest/miniconda.html). Una vez instalado, se deberá acceder al promt (*Anaconda promt*) y teclear el siguiente codigo:
+Inicialmente, se debe descargar [miniconda](https://docs.conda.io/en/latest/miniconda.html). Una vez instalado, se deberá acceder al promt (*Anaconda promt*) y teclear el siguiente codigo:
 
 ~~~
 conda config --prepend channels conda-forge
