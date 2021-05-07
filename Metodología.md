@@ -53,7 +53,7 @@ El código anterior, sirvió para asignar los poligonos que se utilizarán para 
 - `all`: descarga todas las calles y caminos de OSM no privados.
 - `all_private`: descarga todas las calles y caminos de OSM, incluidos los de acceso privado.
 
-Para los fines de la investigación, se consideraron las calles transitables incuidas las carreteras de servicio. En tal sentido, se usó el siguiente codigo para la obtención de grafos.
+Para los fines de la investigación, se consideraron las calles transitables incuidas las carreteras de servicio. En tal sentido, se usó el siguiente codigo para la obtención de *grafo*.
 
 ``` python 
 G_AguascalientesDrive = ox.graph_from_polygon(ZM_Aguascalientes, network_type= "drive_service")
