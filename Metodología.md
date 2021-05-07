@@ -16,7 +16,7 @@ Explicar el procesos metodologico efectuado para la extraccción de redes de car
 
 ## 1. Instalación
 
-En primer lugar debes descargar [miniconda](https://docs.conda.io/en/latest/miniconda.html). Una vez instalado, deberás acceder al promt (*Anaconda promt*) y teclear el siguiente codigo:
+Inicialmnete, se debe descargar [miniconda](https://docs.conda.io/en/latest/miniconda.html). Una vez instalado, se deberá acceder al promt (*Anaconda promt*) y teclear el siguiente codigo:
 
 ~~~
 conda config --prepend channels conda-forge
@@ -60,7 +60,7 @@ Para los fines de la investigación, se consideraron las calles transitables inc
 ``` python 
 G_AguascalientesDrive = ox.graph_from_polygon(ZM_Aguascalientes, network_type= "drive_service")
 ```
-Finalmente, una vez descargado el *grafo* se procedió a guardarlo  mediante el siguiente código, esto permite poder trabajarlo en otro momento y en otro *software* como *Gephi* [(Boeing, 2021)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/05-save-load-networks.ipynb).
+Finalmente, una vez descargado el *grafo* se procedió a guardarlo  mediante el siguiente código, esto permite trabajarlo en otro momento y con otro *software* como *Gephi* [(Boeing, 2021)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/05-save-load-networks.ipynb).
 
 ``` python 
 ox.save_graphml(G_Aguascalientes, "G_Aguascalientes.graphml", gephi= True)
