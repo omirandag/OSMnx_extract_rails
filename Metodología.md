@@ -48,17 +48,12 @@ ZM_Aguascalientes = Aguascalientes["geometry"].iloc[0]
 ```
 El código anterior, sirvió para asignar los poligonos que se utilizarán para extraer el grafo que contiene las redes de vialidades `ox.graph_from_polygon`. Cabe resaltar que la librería te permite extraer diferentes tipos de redes [(Boeing, 2021)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/03-graph-place-queries.ipynb).
 
--`drive`: obtenga calles públicas manejables (pero no carreteras de servicio).
-
--`drive_service`: obtenga calles transitables, incluidas las carreteras de servicio.
-
--`walk`: obtenga todas las calles y caminos que los peatones pueden usar (este tipo de red ignora la direccionalidad unidireccional).
-
--`bike`: obtenga todas las calles y caminos que los ciclistas pueden usar.
-
--`all`: descarga todas las calles y caminos de OSM no privados.
-
--`all_private`: descarga todas las calles y caminos de OSM, incluidos los de acceso privado.
+- `drive`: obtenga calles públicas manejables (pero no carreteras de servicio).
+- `drive_service`: obtenga calles transitables, incluidas las carreteras de servicio.
+- `walk`: obtenga todas las calles y caminos que los peatones pueden usar (este tipo de red ignora la direccionalidad unidireccional).
+- `bike`: obtenga todas las calles y caminos que los ciclistas pueden usar.
+- `all`: descarga todas las calles y caminos de OSM no privados.
+- `all_private`: descarga todas las calles y caminos de OSM, incluidos los de acceso privado.
 
 
 ``` python 
