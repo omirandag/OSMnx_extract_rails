@@ -37,6 +37,8 @@ Aunque existen diversas formas para extraer las redes de carreteras [(Boeing, 20
 
 La información de los municipios que confornan las zonas metropolitanas fueron obtenidas del geoportal de [Conabio](http://www.conabio.gob.mx/informacion/gis/). Los metadatos fueron descargados en formato *.shp*  a escala 1:250000 y corresponden al año 2019.
 
+![Imagen de referencia](https://github.com/omirandag/OSMnx_extract_rails/tree/main/Imagenes/CONABIO.png)
+
 Posteriormente, los archivos fueron guardados en una carpeta en *C:/* con el proposito de ser leidos en *Jupyter Lab* mediante el código `gpd.read_file()`.  Cabe señalar, que para asignar la ruta los archivos *.geojson*, es importante cambiar los signos "\\" por "/". 
 
 Ahora, una vez recopilada esa información, se usó *Jupyter Lab* para extraer las redes de vialidades de las Zonas Metropolitanas de México. Esto, mediante las siguientes lineas de código [(Boeing, 2021)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/01-overview-osmnx.ipynb). 
