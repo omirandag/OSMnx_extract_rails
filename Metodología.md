@@ -40,7 +40,6 @@ La información de los municipios que confornan las zonas metropolitanas fueron 
 
 
 <img src="https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/CONABIO.png">
-![Imagen de referencia](https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/CONABIO.png")
 
 Debido a que el archivo *.shp* fue descargado con todos los municipios de la república mexicana, se tuvo que realizar un filtardo de la informacion para obtener los municipios que conforman a las zonas metropolitanas de México. 
 
