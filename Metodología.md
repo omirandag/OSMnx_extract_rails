@@ -7,9 +7,7 @@
 - Miniconda3
 - Jupyter lab
 - OSMnx 1.0.1 
-- NetworkX 
 - Geopandas 
-- Matplotlib
 
 ## 1. Instalación
 
