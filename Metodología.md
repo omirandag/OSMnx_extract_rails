@@ -35,11 +35,14 @@ import osmnx as ox
 
 Aunque existen diversas formas para extraer las redes de carreteras [(Boeing, 2016)](https://geoffboeing.com/2016/11/osmnx-python-street-networks/), el presente trabajo optó por descargar dichas redes mediante el uso de un poligono predeterminado `ox.graph_from_polygon()`. Entonces, se emplearon poligonos correspondientes a las 74 zonas metropolitanas de México [(Conapo, 2010)](https://www.gob.mx/conapo/documentos/delimitacion-de-las-zonas-metropolitanas-de-mexico-2015). Los cuales fueron delimitados mediante el uso del *software* QSIG 3.10 y exportados en formato *.geojson*. 
 
-La información de los municipios que confornan las zonas metropolitanas fueron obtenidas del geoportal de [Conabio](http://www.conabio.gob.mx/informacion/gis/). Los metadatos fueron descargados en formato *.shp*  a escala 1:250000 y corresponden al año 2019.
+La información de los municipios que confornan las zonas metropolitanas fueron obtenidas del geoportal de [Conabio](http://www.conabio.gob.mx/informacion/gis/). Los metadatos fueron descargados en formato *.shp*  a escala 1:250000 y correspondieron al año 2019. Esta información deberá ser **descargada en coordenadas geográficas (WGS84)**, de lo contrario la información no será procesada en la librería *OSMnx*.  
 
 <img src= "https://github.com/omirandag/OSMnx_extract_rails/tree/main/Imagenes/CONABIO.png" width="100">
 
 ![Imagen de referencia](https://github.com/omirandag/OSMnx_extract_rails/tree/main/Imagenes/CONABIO.png)
+
+Debido a que se descargó un archivo *.shp* con todos los municipios de la república mexicana, se tuvo que realizar un filtardo de la informacion para obtener los municipios que conforman cada una de las zonams metropolitanas de México. 
+
 
 Posteriormente, los archivos fueron guardados en una carpeta en *C:/* con el proposito de ser leidos en *Jupyter Lab* mediante el código `gpd.read_file()`.  Cabe señalar, que para asignar la ruta los archivos *.geojson*, es importante cambiar los signos "\\" por "/". 
 
