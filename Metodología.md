@@ -38,9 +38,9 @@ Aunque existen diversas formas para extraer las redes de carreteras [(Boeing, 20
 
 La información de los municipios que confornan las zonas metropolitanas fueron obtenidas del geoportal de [Conabio](http://www.conabio.gob.mx/informacion/gis/). Los metadatos fueron descargados en formato *.shp*  a escala 1:250000 y correspondieron al año 2019. Esta información deberá ser **descargada en coordenadas geográficas (WGS84)**, de lo contrario la información no será procesada en la librería *OSMnx*.  
 
-<img src= "https://github.com/omirandag/OSMnx_extract_rails/tree/main/Imagenes/CONABIO.png" width="100">
 
-![Imagen de referencia](https://github.com/omirandag/OSMnx_extract_rails/tree/main/Imagenes/CONABIO.png)
+<img src="https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/CONABIO.png">
+![Imagen de referencia](https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/CONABIO.png")
 
 Debido a que el archivo *.shp* fue descargado con todos los municipios de la república mexicana, se tuvo que realizar un filtardo de la informacion para obtener los municipios que conforman a las zonas metropolitanas de México. 
 
