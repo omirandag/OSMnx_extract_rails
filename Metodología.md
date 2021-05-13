@@ -1,6 +1,6 @@
 # Metodología
 
-## Objetivo: Explicar la metodología para extaer redes de carreteras mediante la librería *OSMNx*. 
+## Objetivo: Explicar el proceso de extracción de redes de carreteras mediante la librería *OSMNx*. 
 ## Requerimientos:
 
 - Python 3.8 
@@ -13,7 +13,7 @@
 
 ## 1. Instalación
 
-Inicialmente, se debe descargar [miniconda](https://docs.conda.io/en/latest/miniconda.html). Una vez instalado, se deberá acceder al promt (*Anaconda promt*) y teclear el siguiente codigo:
+Inicialmente, se descargó [miniconda](https://docs.conda.io/en/latest/miniconda.html). Una vez instalado, se accedió al promt (*Anaconda promt*) y teclear el siguiente codigo:
 
 ~~~
 conda config --prepend channels conda-forge
@@ -27,7 +27,7 @@ Esto instala OSMnx y JupyterLab en un entorno conda llamado `ox`, activa el ento
 [(Boeing, 2020)](https://stackoverflow.com/questions/59603695/osmnx-wont-open-in-juypter-notebook/62180703#62180703).
 
 ## 2. Extraer redes de calles mediante la librería OSMNx
-Para poder extraer las redes de carretear mediante el uso de la librería `osmnx` es necesario importar las siguientes librerías: 
+Para poder extraer las redes de carretear mediante el uso de la librería `osmnx` fue necesario importar las siguientes librerías: 
 
 ``` python 
 import geopandas as gpd
@@ -36,12 +36,17 @@ import osmnx as ox
 
 Aunque existen diversas formas para extraer las redes de carreteras [(Boeing, 2016)](https://geoffboeing.com/2016/11/osmnx-python-street-networks/), el presente trabajo optó por descargar dichas redes mediante el uso de un poligono predeterminado `ox.graph_from_polygon()`. Entonces, se emplearon poligonos correspondientes a las 74 zonas metropolitanas de México [(Conapo, 2010)](https://www.gob.mx/conapo/documentos/delimitacion-de-las-zonas-metropolitanas-de-mexico-2015). Los cuales fueron delimitados mediante el uso del *software* QSIG 3.10 y exportados en formato *.geojson*. 
 
-La información de los municipios que confornan las zonas metropolitanas fueron obtenidas del geoportal de [Conabio](http://www.conabio.gob.mx/informacion/gis/). Los metadatos fueron descargados en formato *.shp*  a escala 1:250000 y correspondieron al año 2019. Esta información deberá ser **descargada en coordenadas geográficas (WGS84)**, de lo contrario la información no será procesada en la librería *OSMnx*.  
+La información de los municipios que confornan las zonas metropolitanas fueron obtenidas del geoportal de [Conabio](http://www.conabio.gob.mx/informacion/gis/). Los metadatos fueron descargados en formato *.shp*  a escala 1:250000 y correspondieron al año 2019. Es importante considerar que la información deberá ser **descargada en coordenadas geográficas (WGS84)**, de lo contrario no será procesada en la librería *OSMnx* (Imagen 1).  
 
 
+   **Imagen 1**
+   
 <img src="https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/CONABIO.png">
 
-Debido a que el archivo *.shp* fue descargado con todos los municipios de la república mexicana, se tuvo que realizar un filtardo de la informacion para obtener los municipios que conforman a las zonas metropolitanas de México. 
+Debido a que el archivo *.shp* fue descargado con todos los municipios de la república mexicana, se realizó un filtardo de la informacion para obtener los municipios que conforman a las zonas metropolitanas de México (Imagen 2). 
+
+
+   **Imagen 2**
 
 <img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/ZZMM.png">
 
