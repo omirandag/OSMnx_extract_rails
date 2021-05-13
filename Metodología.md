@@ -13,7 +13,7 @@
 
 ## 1. Instalación
 
-Inicialmente, se descargó [miniconda](https://docs.conda.io/en/latest/miniconda.html). Una vez instalado, se accedió al promt (*Anaconda promt*) y teclear el siguiente codigo:
+Inicialmente, se descargó [miniconda](https://docs.conda.io/en/latest/miniconda.html). Una vez instalado, se accedió al promt (*Anaconda promt*) y tecleó el siguiente codigo:
 
 ~~~
 conda config --prepend channels conda-forge
