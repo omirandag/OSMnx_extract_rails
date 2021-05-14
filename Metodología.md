@@ -1,6 +1,6 @@
 # Metodología
 
-## Objetivo: Explicar el proceso de extracción de redes de carreteras mediante la librería *OSMNx*. 
+## Objetivo: Explicar el proceso de extracción de redes de carreteras mediante la librería *OSMnx*. 
 ## Requerimientos:
 
 - Python 3.8 
@@ -21,10 +21,10 @@ python -m ipykernel install --user --name ox --display-name "OSMNX"
 jupyter lab
 ~~~
 
-Esto instala OSMnx y JupyterLab en un entorno conda llamado `ox`, activa el entorno, instala un kernel ipython en el entorno y luego inicia `Jupyter lab`
+Esto instala *OSMnx* y *JupyterLab* en un entorno conda llamado `ox`, activa el entorno, instala un kernel ipython en el entorno y luego inicia `Jupyter lab`
 [(Boeing, 2020)](https://stackoverflow.com/questions/59603695/osmnx-wont-open-in-juypter-notebook/62180703#62180703).
 
-## 2. Extraer redes de calles mediante la librería OSMNx
+## 2. Extraer redes de calles mediante la librería OSMnx
 Para poder extraer las redes de carretear mediante el uso de la librería `osmnx` fue necesario importar las siguientes librerías: 
 
 ``` python 
@@ -76,3 +76,5 @@ Finalmente, una vez descargado el *grafo* se procedió a guardarlo mediante el s
 ``` python 
 ox.save_graphml(G_Aguascalientes, "G_Aguascalientes.graphml", gephi= True)
 ```
+**Bibliografía complementaria**
+
