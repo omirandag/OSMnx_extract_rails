@@ -33,10 +33,9 @@ import geopandas as gpd
 import osmnx as ox
 ```
 
-Aunque existen diversas formas para extraer las redes de carreteras [(Boeing, 2016)](https://geoffboeing.com/2016/11/osmnx-python-street-networks/), el presente trabajo optó por descargar dichas redes mediante el uso de un poligono predeterminado `ox.graph_from_polygon()`. Entonces, se información correspondiente a las 74 zonas metropolitanas de México [(Conapo, 2010)](https://www.gob.mx/conapo/documentos/delimitacion-de-las-zonas-metropolitanas-de-mexico-2015). Las cuales fueron delimitadas mediante el uso del *software* [QSIG 3.10](https://qgis.org/es/site/forusers/download.html) y exportados en formato *.geojson*. 
+Aunque existen diversas formas para extraer las redes de carreteras [(Boeing, 2016)](https://geoffboeing.com/2016/11/osmnx-python-street-networks/), el presente trabajo optó por descargar dichas redes mediante el uso de un poligono predeterminado `ox.graph_from_polygon()`. Entonces, se información correspondiente a las 74 zonas metropolitanas de México [(Conapo, 2010)](https://www.gob.mx/conapo/documentos/delimitacion-de-las-zonas-metropolitanas-de-mexico-2015). Las cuales fueron delimitadas mediante el uso del *software* [QSIG 3.10](https://qgis.org/es/site/forusers/download.html) y exportadas en formato *.geojson*. 
 
 La información de los municipios que confornan a las zonas metropolitanas, fueron obtenidas del geoportal de [Conabio](http://www.conabio.gob.mx/informacion/gis/). Los metadatos se descargaron en formato *.shp*  a escala 1:250000 y correspondieron al año 2019. Es importante considerar que la información deberá ser **descargada en coordenadas geográficas (WGS84)**, de lo contrario no será procesada en la librería *OSMnx* (Imagen 1).  
-
 
    **Imagen 1**
    
@@ -44,17 +43,25 @@ La información de los municipios que confornan a las zonas metropolitanas, fuer
 
 Debido a que el archivo *.shp* fue descargado con todos los municipios de la república mexicana, se realizó un filtardo de la informacion para obtener los municipios que conforman a las zonas metropolitanas de México (Imagen 2). 
 
-
    **Imagen 2**
 
 <img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/ZZMM.png"> Fuente: Elaboración propia con base en [QSIG](https://qgis.org/es/site/forusers/download.html).
 
-Una vez delimitados estos municipios, se recurrió a generar un geoproceso para disolver los limites municipales y obtener los primetros de cada una de las 74 zonas metropolitanas. Esto se obtuvo en QSIG mediante la siguiente ruta Barra de herramientas -> Vectorial -> Herramientas de geoproceso -> Unión (Imagen 3)
+Una vez delimitados estos municipios, se generó un geoproceso para disolver los limites municipales y obtener los perimetros de cada una de las 74 zonas metropolitanas. Esto se obtuvo en QSIG mediante la siguiente ruta: Barra de herramientas -> Vectorial -> Herramientas de geoproceso -> Disolver (Imagen 3).
 
-   **Imagen 3**
+  **Imagen 3**
 
-<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/UNION.png"> Fuente: QSIG.
+<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/DISOLVER.png"> Fuente: QSIG.
 
+Para completar el proceso, fue necesario asiganar una capa de entrada correspondiente a la zona metropolitana y se guardó como archivo *.geojson* (Imagen 4 y 5). 
+
+  **Imagen 4**
+
+<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/DISOLVER2.png" width = "700"> Fuente: QSIG.
+
+  **Imagen 5**
+
+<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/GEOJSON.png" width = "700"> Fuente: QSIG.
 
 Posteriormente, los archivos fueron guardados en una carpeta en *C:/* con el proposito de ser leidos en *Jupyter Lab* mediante el código `gpd.read_file()`.  Cabe señalar, que para asignar la ruta los archivos *.geojson*, es importante cambiar los signos "\\" por "/". 
 
@@ -84,5 +91,5 @@ Finalmente, una vez descargado el *grafo* se procedió a guardarlo mediante el s
 ``` python 
 ox.save_graphml(G_Aguascalientes, "G_Aguascalientes.graphml", gephi= True)
 ```
-**Bibliografía complementaria**
+
 
