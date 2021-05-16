@@ -3,6 +3,7 @@
 ## Objetivo: Explicar el proceso de extracción de redes de carreteras mediante la librería *OSMnx*. 
 ## Requerimientos:
 
+- QSIG 3.10
 - Python 3.8 
 - Miniconda3
 - Jupyter lab
@@ -21,20 +22,20 @@ python -m ipykernel install --user --name ox --display-name "OSMNX"
 jupyter lab
 ~~~
 
-Esto instala *OSMnx* y *JupyterLab* en un entorno conda llamado `ox`, activa el entorno, instala un kernel ipython en el entorno y luego inicia `Jupyter lab`
+Esto instala *OSMnx* y *Jupyter Lab* en un entorno conda llamado `ox`, activa el entorno, instala un kernel ipython y luego inicia `Jupyter lab`
 [(Boeing, 2020)](https://stackoverflow.com/questions/59603695/osmnx-wont-open-in-juypter-notebook/62180703#62180703).
 
 ## 2. Extraer redes de calles mediante la librería OSMnx
-Para poder extraer las redes de carretear mediante el uso de la librería `osmnx` fue necesario importar las siguientes librerías: 
+Para poder extraer las redes de carretear mediante `osmnx` fue necesario importar las siguientes librerías: 
 
 ``` python 
 import geopandas as gpd
 import osmnx as ox
 ```
 
-Aunque existen diversas formas para extraer las redes de carreteras [(Boeing, 2016)](https://geoffboeing.com/2016/11/osmnx-python-street-networks/), el presente trabajo optó por descargar dichas redes mediante el uso de un poligono predeterminado `ox.graph_from_polygon()`. Entonces, se emplearon poligonos correspondientes a las 74 zonas metropolitanas de México [(Conapo, 2010)](https://www.gob.mx/conapo/documentos/delimitacion-de-las-zonas-metropolitanas-de-mexico-2015). Los cuales fueron delimitados mediante el uso del *software* QSIG 3.10 y exportados en formato *.geojson*. 
+Aunque existen diversas formas para extraer las redes de carreteras [(Boeing, 2016)](https://geoffboeing.com/2016/11/osmnx-python-street-networks/), el presente trabajo optó por descargar dichas redes mediante el uso de un poligono predeterminado `ox.graph_from_polygon()`. Entonces, se información correspondiente a las 74 zonas metropolitanas de México [(Conapo, 2010)](https://www.gob.mx/conapo/documentos/delimitacion-de-las-zonas-metropolitanas-de-mexico-2015). Las cuales fueron delimitadas mediante el uso del *software* [QSIG 3.10](https://qgis.org/es/site/forusers/download.html) y exportados en formato *.geojson*. 
 
-La información de los municipios que confornan las zonas metropolitanas fueron obtenidas del geoportal de [Conabio](http://www.conabio.gob.mx/informacion/gis/). Los metadatos fueron descargados en formato *.shp*  a escala 1:250000 y correspondieron al año 2019. Es importante considerar que la información deberá ser **descargada en coordenadas geográficas (WGS84)**, de lo contrario no será procesada en la librería *OSMnx* (Imagen 1).  
+La información de los municipios que confornan a las zonas metropolitanas, fueron obtenidas del geoportal de [Conabio](http://www.conabio.gob.mx/informacion/gis/). Los metadatos se descargaron en formato *.shp*  a escala 1:250000 y correspondieron al año 2019. Es importante considerar que la información deberá ser **descargada en coordenadas geográficas (WGS84)**, de lo contrario no será procesada en la librería *OSMnx* (Imagen 1).  
 
 
    **Imagen 1**
@@ -47,6 +48,13 @@ Debido a que el archivo *.shp* fue descargado con todos los municipios de la rep
    **Imagen 2**
 
 <img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/ZZMM.png"> Fuente: Elaboración propia con base en [QSIG](https://qgis.org/es/site/forusers/download.html).
+
+Una vez delimitados estos municipios, se recurrió a generar un geoproceso para disolver los limites municipales y obtener los primetros de cada una de las 74 zonas metropolitanas. Esto se obtuvo en QSIG mediante la siguiente ruta Barra de herramientas -> Vectorial -> Herramientas de geoproceso -> Unión (Imagen 3)
+
+   **Imagen 3**
+
+<img src = ""> Fuente: QSIG.
+
 
 Posteriormente, los archivos fueron guardados en una carpeta en *C:/* con el proposito de ser leidos en *Jupyter Lab* mediante el código `gpd.read_file()`.  Cabe señalar, que para asignar la ruta los archivos *.geojson*, es importante cambiar los signos "\\" por "/". 
 
