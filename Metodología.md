@@ -53,7 +53,7 @@ Una vez delimitados estos municipios, se recurrió a generar un geoproceso para 
 
    **Imagen 3**
 
-<img src = ""> Fuente: QSIG.
+<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/UNION.png"> Fuente: QSIG.
 
 
 Posteriormente, los archivos fueron guardados en una carpeta en *C:/* con el proposito de ser leidos en *Jupyter Lab* mediante el código `gpd.read_file()`.  Cabe señalar, que para asignar la ruta los archivos *.geojson*, es importante cambiar los signos "\\" por "/". 
