@@ -31,29 +31,29 @@ Aunque existen diversas formas para extraer las redes de carreteras [(Boeing, 20
 
 La información de los municipios que confornan a las zonas metropolitanas, fue obtenida del geoportal de [Conabio](http://www.conabio.gob.mx/informacion/gis/). Los metadatos se descargaron en formato *.shp*  a escala 1:250000 y correspondieron al año 2019. Es importante considerar que la información deberá ser **descargada en coordenadas geográficas (WGS84)**, de lo contrario no será procesada en la librería *OSMnx* (Imagen 1).  
 
-   **Imagen 1**
-   
+**Imagen 1**  
+
 <img src="https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/CONABIO.png"> Fuente: [(Conabio, 2021)](http://www.conabio.gob.mx/informacion/gis/).
 
 Debido a que el archivo *.shp* fue descargado con todos los municipios de la república mexicana, se realizó un filtrado de la informacion para obtener los municipios que conforman a las zonas metropolitanas de México (Imagen 2). 
 
-   **Imagen 2**
+ **Imagen 2**
 
 <img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/ZZMM.png"> Fuente: Elaboración propia con base en [QSIG](https://qgis.org/es/site/forusers/download.html).
 
 Una vez delimitados los municipios, se generó un geoproceso para disolver los limites municipales y obtener los perimetros de cada una de las 74 zonas metropolitanas. Esto se obtuvo en QSIG mediante la siguiente ruta: Barra de herramientas -> Vectorial -> Herramientas de geoproceso -> Disolver (Imagen 3).
 
-  **Imagen 3**
+**Imagen 3**
 
 <img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/DISOLVER.png"> Fuente: QSIG.
 
 Para completar el proceso, fue necesario asiganar una capa de entrada correspondiente a la zona metropolitana y se guardó como archivo *.geojson* (Imagen 4 y 5). 
 
-  **Imagen 4**
+**Imagen 4**
 
 <img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/DISOLVER2.png"> Fuente: QSIG.
 
-  **Imagen 5**
+**Imagen 5**
 
 <img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/GEOJSON.png"> Fuente: QSIG.
 
