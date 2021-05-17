@@ -12,7 +12,7 @@
 
 ## 1. Instalación
 
-El procesos de obtención de carreteras, requirió de la descarga e instalacion de dos *software*. El primero fue [QSIG 3.10](https://qgis.org/es/site/forusers/download.html) que es una palicación de Sistemas de Información Geografía (SIG) de código abierto que permite la manipulación y análisis de información espacial. Su instalación es muy sencilla solo se necesitó descargar el instalador autónomo para QSIG y ejecutar la aplicación.  
+El proceso de obtención de carreteras, requirió de la descarga e instalacion de dos *software*. El primero fue [QSIG 3.10](https://qgis.org/es/site/forusers/download.html) que es una aplicación de Sistemas de Información Geografía (SIG) de código abierto que permite la manipulación y análisis de información espacial. Su instalación es muy sencilla solo se necesitó descargar el instalador autónomo para QSIG y ejecutar la aplicación.  
 
 El segundo fue [miniconda](https://docs.conda.io/en/latest/miniconda.html) que consiste en un gestor de paquetes y un sistema de gestión de entornos de código abierto [(Anaconda, Inc. 2017)](https://docs.conda.io/projects/conda/en/latest/). Una vez instalado, se accedió al promt (*Anaconda promt*) y tecleó el siguiente codigo:
 
@@ -61,7 +61,7 @@ Para completar el proceso, fue necesario asiganar una capa de entrada correspond
 
 Finalmente, los archivos fueron guardados en una carpeta en *C:/* con el proposito de ser leidos en *Jupyter Lab* mediante el código `gpd.read_file()`. Cabe señalar, que para asignar la ruta de los archivos *.geojson*, fue importante cambiar los signos "\\" por "/". 
 
-Una vez recopilada esa información, se usó *Jupyter Lab* para extraer las redes de las Zonas Metropolitanas de México. El primer paso consistió en importar las siguientes librerías: 
+Una vez recopilada esa información, se usó *Jupyter Lab* para extraer las redes de las zonas metropolitanas de México. El primer paso consistió en importar las siguientes librerías: 
 
 ``` python 
 import geopandas as gpd
@@ -94,3 +94,6 @@ Finalmente, una vez descargado el *grafo* se procedió a guardarlo mediante el s
 ``` python 
 ox.save_graphml(G_Aguascalientes, "G_Aguascalientes.graphml", gephi= True)
 ```
+## Referencias
+
+Boeing, Geoff (2020) [OSMnx wont open in Juypter Notebook](https://stackoverflow.com/questions/59603695/osmnx-wont-open-in-juypter-notebook/62180703#62180703)
