@@ -41,7 +41,7 @@ Debido a que el archivo *.shp* fue descargado con todos los municipios de la rep
 
 <img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/ZZMM.png"> Fuente: Elaboración propia con base en [QSIG](https://qgis.org/es/site/forusers/download.html).
 
-Una vez delimitados estos municipios, se generó un geoproceso para disolver los limites municipales y obtener los perimetros de cada una de las 74 zonas metropolitanas. Esto se obtuvo en QSIG mediante la siguiente ruta: Barra de herramientas -> Vectorial -> Herramientas de geoproceso -> Disolver (Imagen 3).
+Una vez delimitados los municipios, se generó un geoproceso para disolver los limites municipales y obtener los perimetros de cada una de las 74 zonas metropolitanas. Esto se obtuvo en QSIG mediante la siguiente ruta: Barra de herramientas -> Vectorial -> Herramientas de geoproceso -> Disolver (Imagen 3).
 
   **Imagen 3**
 
