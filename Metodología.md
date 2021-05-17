@@ -95,11 +95,11 @@ Finalmente, una vez descargado el *grafo* se procedió a guardarlo mediante el s
 ox.save_graphml(G_Aguascalientes, "G_Aguascalientes.graphml", gephi= True)
 ```
 ## Referencias
-- Anaconda, Inc. (2017) [Conda](https://docs.conda.io/projects/conda/en/latest/).
-- Boeing, Geoff (2021a) [OSMnx overview: querying, simplifying, visualizing, saving](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/01-overview-osmnx.ipynb).
-- Boeing, Geoff (2021b) [Use OSMnx to get street networks by place name](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/03-graph-place-queries.ipynb).
-- Boeing, Geoff (2021c) [Save/load street network models to/from disk](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/05-save-load-networks.ipynb).
-- Boeing, Geoff (2020) [OSMnx wont open in Juypter Notebook](https://stackoverflow.com/questions/59603695/osmnx-wont-open-in-juypter-notebook/62180703#62180703).
-- Boeing, Geoff (2016) [OSMnx: Python for Street Networks](https://geoffboeing.com/2016/11/osmnx-python-street-networks/).
-- Conabio (2021) [Portal de Geoinformación 2021.Sistema Nacional de Información Sobre Biodiversidad (SNIB)](http://www.conabio.gob.mx/informacion/gis/).
-- Conapo (2010) [Delimitación de las zonas metropolitanas de México 2015](https://www.gob.mx/conapo/documentos/delimitacion-de-las-zonas-metropolitanas-de-mexico-2015).
+- Anaconda, Inc. (2017). *Conda*. Recuperado de [https://docs.conda.io/projects/conda/en/latest/](https://docs.conda.io/projects/conda/en/latest/).
+- Boeing, Geoff (1 de mayo de 2021a). *OSMnx overview: querying, simplifying, visualizing, saving*. Recuperado de [https://github.com/gboeing/osmnx-examples/blob/main/notebooks/01-overview-osmnx.ipynb](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/01-overview-osmnx.ipynb).
+- Boeing, Geoff (19 de marzo de 2021b). *Use OSMnx to get street networks by place name*. Recuperado de [https://github.com/gboeing/osmnx-examples/blob/main/notebooks/03-graph-place-queries.ipynb](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/03-graph-place-queries.ipynb).
+- Boeing, Geoff (1 de mayo de 2021c). *Save/load street network models to/from disk*. Recuperado de [https://github.com/gboeing/osmnx-examples/blob/main/notebooks/05-save-load-networks.ipynb](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/05-save-load-networks.ipynb).
+- Boeing, Geoff (3 de junio de 2020). *OSMnx wont open in Juypter Notebook*. Recuperado de [https://stackoverflow.com/questions/59603695/osmnx-wont-open-in-juypter-notebook/62180703#62180703](https://stackoverflow.com/questions/59603695/osmnx-wont-open-in-juypter-notebook/62180703#62180703).
+- Boeing, Geoff (1 de noviembre de 2016). *OSMnx: Python for Street Networks*. Recuperado de [https://geoffboeing.com/2016/11/osmnx-python-street-networks/](https://geoffboeing.com/2016/11/osmnx-python-street-networks/).
+- Conabio (2021). *Portal de Geoinformación 2021.Sistema Nacional de Información Sobre Biodiversidad (SNIB)*. [http://www.conabio.gob.mx/informacion/gis/](http://www.conabio.gob.mx/informacion/gis/).
+- Conapo (2010). *Delimitación de las zonas metropolitanas de México 2015*. Recuperado de [https://www.gob.mx/conapo/documentos/delimitacion-de-las-zonas-metropolitanas-de-mexico-2015](https://www.gob.mx/conapo/documentos/delimitacion-de-las-zonas-metropolitanas-de-mexico-2015).
