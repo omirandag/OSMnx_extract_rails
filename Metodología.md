@@ -59,16 +59,14 @@ Para completar el proceso, fue necesario asiganar una capa de entrada correspond
 
 <img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/GEOJSON.png"> Fuente: QSIG.
 
-Finalmente, los archivos fueron guardados en una carpeta en *C:/* con el proposito de ser leidos en *Jupyter Lab* mediante el código `gpd.read_file()`. Cabe señalar, que para asignar la ruta de los archivos *.geojson*, fue importante cambiar los signos "\\" por "/". 
-
-Una vez recopilada esa información, se usó *Jupyter Lab* para extraer las redes de las zonas metropolitanas de México. El primer paso consistió en importar las siguientes librerías: 
+Finalmente, los archivos fueron guardados en una carpeta en *C:/* con el proposito de ser leidos en *Jupyter Lab* mediante el código `gpd.read_file()`. Una vez recopilada esa información, se usó *Jupyter Lab* para extraer las redes de las zonas metropolitanas de México. El primer paso consistió en importar las siguientes librerías: 
 
 ``` python 
 import geopandas as gpd
 import osmnx as ox
 ```
 
-Posteriormente, se procedió a leer los archivos mediante las siguientes lineas de código [(Boeing, 2021a)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/01-overview-osmnx.ipynb). 
+Posteriormente, se procedió a leer los archivos mediante las siguientes lineas de código [(Boeing, 2021a)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/01-overview-osmnx.ipynb). Cabe señalar, que para asignar la ruta de los archivos *.geojson*, fue importante cambiar los signos "\\" por "/".
 
 ``` python 
 Aguascalientes = gpd.read_file("C:/Analisis_redes_ZZ_MM/JSON/ZM_Aguascalientes.geojson")
