@@ -57,7 +57,9 @@ Para completar el proceso, fue necesario asiganar una capa de entrada correspond
 
 <img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/GEOJSON.png"> Fuente: QSIG.
 
-Finalmente, los archivos fueron guardados en una carpeta en *C:/* con el proposito de ser leidos en *Jupyter Lab* mediante el código `gpd.read_file()`.  Cabe señalar, que para asignar la ruta los archivos *.geojson*, es importante cambiar los signos "\\" por "/". Una vez recopilada esa información, se usó *Jupyter Lab* para extraer las redes de vialidades de las Zonas Metropolitanas de México. El primer paso consistió en importar las siguientes librerías: 
+Finalmente, los archivos fueron guardados en una carpeta en *C:/* con el proposito de ser leidos en *Jupyter Lab* mediante el código `gpd.read_file()`. Cabe señalar, que para asignar la ruta de los archivos *.geojson*, fue importante cambiar los signos "\\" por "/". 
+
+Una vez recopilada esa información, se usó *Jupyter Lab* para extraer las redes de las Zonas Metropolitanas de México. El primer paso consistió en importar las siguientes librerías: 
 
 ``` python 
 import geopandas as gpd
