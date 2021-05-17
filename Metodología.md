@@ -29,7 +29,7 @@ Esto instala *OSMnx* y *Jupyter Lab* en un entorno conda llamado `ox`, activa el
 
 ## 2. Extraer redes de calles mediante la librería OSMnx
 
-Aunque existen diversas formas para extraer las redes de carreteras [(Boeing, 2016)](https://geoffboeing.com/2016/11/osmnx-python-street-networks/), el presente trabajo optó por descargar dichas redes mediante el uso de un poligono predeterminado `ox.graph_from_polygon()`. Entonces, se usó información correspondiente a las 74 zonas metropolitanas de México [(Conapo, 2010)](https://www.gob.mx/conapo/documentos/delimitacion-de-las-zonas-metropolitanas-de-mexico-2015). Las cuales fueron delimitadas mediante el uso del *software* [QSIG 3.10](https://qgis.org/es/site/forusers/download.html) y exportadas en formato *.geojson*. 
+Aunque existen diversas formas para extraer las redes de carreteras [(Boeing, 2016)](https://geoffboeing.com/2016/11/osmnx-python-street-networks/), el presente trabajo optó por descargar dichas redes mediante el uso de un poligono predeterminado `ox.graph_from_polygon()`. Entonces, se usó información correspondiente a las 74 zonas metropolitanas de México [(Conapo, 2010)](https://www.gob.mx/conapo/documentos/delimitacion-de-las-zonas-metropolitanas-de-mexico-2015). Las cuales fueron delimitadas mediante el uso del *software* QSIG 3.10 y exportadas en formato *.geojson*. 
 
 La información de los municipios que confornan a las zonas metropolitanas, fue obtenida del geoportal de [Conabio](http://www.conabio.gob.mx/informacion/gis/). Los metadatos se descargaron en formato *.shp*  a escala 1:250000 y correspondieron al año 2019. Es importante considerar que la información deberá ser **descargada en coordenadas geográficas (WGS84)**, de lo contrario no será procesada en la librería *OSMnx* (Imagen 1).  
 
@@ -41,7 +41,7 @@ Debido a que el archivo *.shp* fue descargado con todos los municipios de la rep
 
  **Imagen 2**
 
-<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/ZZMM.png"> Fuente: Elaboración propia con base en [QSIG](https://qgis.org/es/site/forusers/download.html).
+<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/ZZMM.png"> Fuente: Elaboración propia con base en QSIG.
 
 Una vez delimitados los municipios, se generó un geoproceso para disolver los limites municipales y obtener los perimetros de cada una de las 74 zonas metropolitanas. Esto se obtuvo en QSIG mediante la siguiente ruta: Barra de herramientas -> Vectorial -> Herramientas de geoproceso -> Disolver (Imagen 3).
 
@@ -75,7 +75,7 @@ Aguascalientes = gpd.read_file("C:/Analisis_redes_ZZ_MM/JSON/ZM_Aguascalientes.g
 ZM_Aguascalientes = Aguascalientes["geometry"].iloc[0] 
 ```
 
-El código anterior, sirvió para asignar los poligonos que se utilizarán para extraer el grafo que contiene las redes de vialidades. Cabe resaltar, que OSMNx permite extraer diferentes tipos de redes [(Boeing, 2021)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/03-graph-place-queries.ipynb).
+El código anterior, sirvió para asignar los poligonos que se utilizarán para extraer el *grafo* que contiene las redes de vialidades. Cabe resaltar, que OSMNx permite extraer diferentes tipos de redes [(Boeing, 2021)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/03-graph-place-queries.ipynb).
 
 - `drive`: obtiene calles públicas manejables (pero no carreteras de servicio).
 - `drive_service`: obtiene calles transitables, incluidas las carreteras de servicio.
