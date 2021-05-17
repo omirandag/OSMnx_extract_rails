@@ -12,7 +12,7 @@
 
 ## 1. Instalación
 
-El proceso de obtención de carreteras, requirió de la descarga e instalacion de dos *software*. El primero fue [QSIG 3.10](https://qgis.org/es/site/forusers/download.html) que es una aplicación de Sistemas de Información Geografía (SIG) de código abierto que permite la manipulación y análisis de información espacial. Su instalación es muy sencilla solo se necesitó descargar el instalador autónomo para QSIG y ejecutar la aplicación.  
+El proceso de obtención de carreteras, requirió de la descarga e instalacion de dos *software*. El primero fue [QSIG 3.10](https://qgis.org/es/site/forusers/download.html) que es una aplicación de Sistemas de Información Geografía (SIG) de código abierto que permite la manipulación y análisis de información espacial. Su instalación fue muy sencilla pues solo se necesitó descargar el *instalador autónomo para QSIG* y ejecutar la aplicación.  
 
 El segundo fue [miniconda](https://docs.conda.io/en/latest/miniconda.html) que consiste en un gestor de paquetes y un sistema de gestión de entornos de código abierto [(Anaconda, Inc., 2017)](https://docs.conda.io/projects/conda/en/latest/). Una vez instalado, se accedió al promt (*Anaconda promt*) y tecleó el siguiente codigo:
 
