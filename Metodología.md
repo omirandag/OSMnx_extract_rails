@@ -35,7 +35,7 @@ La información de los municipios que confornan a las zonas metropolitanas, fue 
    
 <img src="https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/CONABIO.png"> Fuente: [(Conabio, 2021)](http://www.conabio.gob.mx/informacion/gis/).
 
-Debido a que el archivo *.shp* fue descargado con todos los municipios de la república mexicana, se realizó un filtardo de la informacion para obtener los municipios que conforman a las zonas metropolitanas de México (Imagen 2). 
+Debido a que el archivo *.shp* fue descargado con todos los municipios de la república mexicana, se realizó un filtrado de la informacion para obtener los municipios que conforman a las zonas metropolitanas de México (Imagen 2). 
 
    **Imagen 2**
 
