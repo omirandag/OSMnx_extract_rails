@@ -14,7 +14,7 @@
 
 El proceso de obtención de carreteras, requirió de la descarga e instalacion de dos *software*. El primero fue [QSIG 3.10](https://qgis.org/es/site/forusers/download.html) que es una aplicación de Sistemas de Información Geografía (SIG) de código abierto que permite la manipulación y análisis de información espacial. Su instalación es muy sencilla solo se necesitó descargar el instalador autónomo para QSIG y ejecutar la aplicación.  
 
-El segundo fue [miniconda](https://docs.conda.io/en/latest/miniconda.html) que consiste en un gestor de paquetes y un sistema de gestión de entornos de código abierto [(Anaconda, Inc. 2017)](https://docs.conda.io/projects/conda/en/latest/). Una vez instalado, se accedió al promt (*Anaconda promt*) y tecleó el siguiente codigo:
+El segundo fue [miniconda](https://docs.conda.io/en/latest/miniconda.html) que consiste en un gestor de paquetes y un sistema de gestión de entornos de código abierto [(Anaconda, Inc., 2017)](https://docs.conda.io/projects/conda/en/latest/). Una vez instalado, se accedió al promt (*Anaconda promt*) y tecleó el siguiente codigo:
 
 ~~~
 conda config --prepend channels conda-forge
@@ -68,14 +68,14 @@ import geopandas as gpd
 import osmnx as ox
 ```
 
-Posteriormente, se procedió a leer los archivos mediante las siguientes lineas de código [(Boeing, 2021)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/01-overview-osmnx.ipynb). 
+Posteriormente, se procedió a leer los archivos mediante las siguientes lineas de código [(Boeing, 2021a)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/01-overview-osmnx.ipynb). 
 
 ``` python 
 Aguascalientes = gpd.read_file("C:/Analisis_redes_ZZ_MM/JSON/ZM_Aguascalientes.geojson")
 ZM_Aguascalientes = Aguascalientes["geometry"].iloc[0] 
 ```
 
-El código anterior, sirvió para asignar los poligonos que se utilizarán para extraer el *grafo* que contiene las redes de vialidades. Cabe resaltar, que OSMNx permite extraer diferentes tipos de redes [(Boeing, 2021)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/03-graph-place-queries.ipynb).
+El código anterior, sirvió para asignar los poligonos que se utilizarán para extraer el *grafo* que contiene las redes de vialidades. Cabe resaltar, que OSMNx permite extraer diferentes tipos de redes [(Boeing, 2021b)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/03-graph-place-queries.ipynb).
 
 - `drive`: obtiene calles públicas manejables (pero no carreteras de servicio).
 - `drive_service`: obtiene calles transitables, incluidas las carreteras de servicio.
@@ -89,11 +89,16 @@ Para los fines de la investigación, se consideraron las calles transitables inc
 ``` python 
 G_AguascalientesDrive = ox.graph_from_polygon(ZM_Aguascalientes, network_type= "drive_service")
 ```
-Finalmente, una vez descargado el *grafo* se procedió a guardarlo mediante el siguiente código, esto permite trabajarlo en otro momento y con otro *software* como *Gephi* [(Boeing, 2021)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/05-save-load-networks.ipynb).
+Finalmente, una vez descargado el *grafo* se procedió a guardarlo mediante el siguiente código, esto permite trabajarlo en otro momento y con otro *software* como *Gephi* [(Boeing, 2021c)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/05-save-load-networks.ipynb).
 
 ``` python 
 ox.save_graphml(G_Aguascalientes, "G_Aguascalientes.graphml", gephi= True)
 ```
 ## Referencias
 
-Boeing, Geoff (2020) [OSMnx wont open in Juypter Notebook](https://stackoverflow.com/questions/59603695/osmnx-wont-open-in-juypter-notebook/62180703#62180703)
+-Boeing, Geoff (2021a) [OSMnx overview: querying, simplifying, visualizing, saving](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/01-overview-osmnx.ipynb)
+-Boeing, Geoff (2021b) [Use OSMnx to get street networks by place name](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/03-graph-place-queries.ipynb)
+-Boeing, Geoff (2021c) [Save/load street network models to/from disk](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/05-save-load-networks.ipynb)
+-Boeing, Geoff (2020) [OSMnx wont open in Juypter Notebook](https://stackoverflow.com/questions/59603695/osmnx-wont-open-in-juypter-notebook/62180703#62180703)
+-Boeing, Geoff (2016) [OSMnx: Python for Street Networks](https://geoffboeing.com/2016/11/osmnx-python-street-networks/)
+-Conapo (2010)[Delimitación de las zonas metropolitanas de México 2015](https://www.gob.mx/conapo/documentos/delimitacion-de-las-zonas-metropolitanas-de-mexico-2015)
