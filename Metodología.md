@@ -51,11 +51,11 @@ Para completar el proceso, fue necesario asiganar una capa de entrada correspond
 
   **Imagen 4**
 
-<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/DISOLVER2.png" width = "700"> Fuente: QSIG.
+<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/DISOLVER2.png"> Fuente: QSIG.
 
   **Imagen 5**
 
-<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/GEOJSON.png" width = "700"> Fuente: QSIG.
+<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/GEOJSON.png"> Fuente: QSIG.
 
 Finalmente, los archivos fueron guardados en una carpeta en *C:/* con el proposito de ser leidos en *Jupyter Lab* mediante el código `gpd.read_file()`.  Cabe señalar, que para asignar la ruta los archivos *.geojson*, es importante cambiar los signos "\\" por "/". Una vez recopilada esa información, se usó *Jupyter Lab* para extraer las redes de vialidades de las Zonas Metropolitanas de México. El primer paso consistió en importar las siguientes librerías: 
 
