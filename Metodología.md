@@ -66,7 +66,7 @@ import geopandas as gpd
 import osmnx as ox
 ```
 
-Posteriormente, se procedió a leer los archivos mediante las siguientes lineas de código [(Boeing, 2021a)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/01-overview-osmnx.ipynb). Cabe señalar, que para asignar la ruta de los archivos *.geojson*, fue importante cambiar los signos "\\" por "/".
+Posteriormente, se procedió a leer los archivos mediante las siguientes líneas de código [(Boeing, 2021a)](https://github.com/gboeing/osmnx-examples/blob/main/notebooks/01-overview-osmnx.ipynb). Cabe señalar, que para asignar la ruta de los archivos *.geojson*, fue importante cambiar los signos "\\" por "/".
 
 ``` python 
 Aguascalientes = gpd.read_file("C:/Analisis_redes_ZZ_MM/JSON/ZM_Aguascalientes.geojson")
@@ -82,7 +82,7 @@ El código anterior, sirvió para asignar los poligonos que se utilizarán para 
 - `all`: descarga todas las calles y caminos de OSM no privados.
 - `all_private`: descarga todas las calles y caminos de OSM, incluidos los de acceso privado.
 
-Para los fines de la investigación, se consideraron las calles transitables incuidas las carreteras de servicio. En tal sentido, se usó el siguiente codigo para la obtención del *grafo*.
+Para los fines de la investigación, se consideraron las calles transitables incuidas las carreteras de servicio. En tal sentido, se usó el siguiente código para la obtención del *grafo*.
 
 ``` python 
 G_AguascalientesDrive = ox.graph_from_polygon(ZM_Aguascalientes, network_type= "drive_service")
