@@ -4,8 +4,8 @@
 ## Requerimientos:
 
 - QGIS 3.10
-- Python 3.8 
 - Miniconda3
+  - Python 3.8 
   - Jupyter lab
   - OSMnx 1.0.1 
   - Geopandas 
