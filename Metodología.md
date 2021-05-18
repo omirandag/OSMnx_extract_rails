@@ -6,9 +6,9 @@
 - QGIS 3.10
 - Python 3.8 
 - Miniconda3
-- Jupyter lab
-- OSMnx 1.0.1 
-- Geopandas 
+  - Jupyter lab
+  - OSMnx 1.0.1 
+  - Geopandas 
 
 ## 1. Instalación
 
