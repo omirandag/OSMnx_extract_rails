@@ -3,7 +3,7 @@
 ## Objetivo: Explicar el proceso de extracción de redes de carreteras mediante la librería *OSMnx*. 
 ## Requerimientos:
 
-- QSIG 3.10
+- QGIS 3.10
 - Python 3.8 
 - Miniconda3
 - Jupyter lab
@@ -12,7 +12,7 @@
 
 ## 1. Instalación
 
-El proceso de obtención de carreteras, requirió de la descarga e instalacion de dos *software*. El primero fue [QSIG 3.10](https://qgis.org/es/site/forusers/download.html) que es una aplicación de Sistemas de Información Geografía (SIG) de código abierto que permite la manipulación y análisis de información espacial. Su instalación fue muy sencilla pues solo se necesitó descargar el *instalador autónomo para QSIG* y ejecutar la aplicación.  
+El proceso de obtención de carreteras, requirió de la descarga e instalacion de dos *software*. El primero fue [QGIS  3.10](https://qgis.org/es/site/forusers/download.html) que es una aplicación de Sistemas de Información Geografía (SIG) de código abierto que permite la manipulación y análisis de información espacial. Su instalación fue muy sencilla pues solo se necesitó descargar el *instalador autónomo para QGIS * y ejecutar la aplicación.  
 
 El segundo fue [miniconda](https://docs.conda.io/en/latest/miniconda.html) que consiste en un gestor de paquetes y un sistema de gestión de entornos de código abierto [(Anaconda, Inc., 2017)](https://docs.conda.io/projects/conda/en/latest/). Una vez instalado, se accedió al promt (*Anaconda promt*) y tecleó el siguiente codigo:
 
@@ -29,7 +29,7 @@ Esto instala *OSMnx* y *Jupyter Lab* en un entorno conda llamado `ox`, activa el
 
 ## 2. Extraer redes de calles mediante la librería OSMnx
 
-Aunque existen diversas formas para extraer las redes de carreteras [(Boeing, 2016)](https://geoffboeing.com/2016/11/osmnx-python-street-networks/), el presente trabajo optó por descargar dichas redes mediante el uso de un poligono predeterminado `ox.graph_from_polygon()`. Entonces, se usó información correspondiente a las 74 zonas metropolitanas de México [(Conapo, 2015)](https://www.gob.mx/conapo/documentos/delimitacion-de-las-zonas-metropolitanas-de-mexico-2015). Las cuales fueron delimitadas mediante el uso del *software* QSIG 3.10 y exportadas en formato *.geojson*. 
+Aunque existen diversas formas para extraer las redes de carreteras [(Boeing, 2016)](https://geoffboeing.com/2016/11/osmnx-python-street-networks/), el presente trabajo optó por descargar dichas redes mediante el uso de un poligono predeterminado `ox.graph_from_polygon()`. Entonces, se usó información correspondiente a las 74 zonas metropolitanas de México [(Conapo, 2015)](https://www.gob.mx/conapo/documentos/delimitacion-de-las-zonas-metropolitanas-de-mexico-2015). Las cuales fueron delimitadas mediante el uso del *software* QGIS 3.10 y exportadas en formato *.geojson*. 
 
 La información de los municipios que conforman a las zonas metropolitanas, fue obtenida del geoportal de [Conabio](http://www.conabio.gob.mx/informacion/gis/). Los metadatos se descargaron en formato *.shp*  a escala 1:250000 y correspondieron al año 2019. Es importante considerar que la información deberá ser **descargada en coordenadas geográficas (WGS84)**, de lo contrario no será procesada en la librería *OSMnx* (Imagen 1).  
 
@@ -41,23 +41,23 @@ Debido a que el archivo *.shp* fue descargado con todos los municipios de la rep
 
  **Imagen 2**
 
-<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/ZZMM.png"> Fuente: Elaboración propia con base en QSIG.
+<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/ZZMM.png"> Fuente: Elaboración propia con base en QGIS .
 
-Una vez delimitados los municipios, se generó un geoproceso para disolver los limites municipales y obtener los perimetros de cada una de las 74 zonas metropolitanas. Esto se obtuvo en QSIG mediante la siguiente ruta: Barra de herramientas -> Vectorial -> Herramientas de geoproceso -> Disolver (Imagen 3).
+Una vez delimitados los municipios, se generó un geoproceso para disolver los limites municipales y obtener los perimetros de cada una de las 74 zonas metropolitanas. Esto se obtuvo en QGIS mediante la siguiente ruta: Barra de herramientas -> Vectorial -> Herramientas de geoproceso -> Disolver (Imagen 3).
 
 **Imagen 3**
 
-<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/DISOLVER.png"> Fuente: QSIG.
+<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/DISOLVER.png"> Fuente: QGIS.
 
 Para completar el proceso, fue necesario asiganar una capa de entrada correspondiente a la zona metropolitana y se guardó como archivo *.geojson* (Imagen 4 y 5). 
 
 **Imagen 4**
 
-<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/DISOLVER2.png"> Fuente: QSIG.
+<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/DISOLVER2.png"> Fuente: QGIS.
 
 **Imagen 5**
 
-<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/GEOJSON.png"> Fuente: QSIG.
+<img src = "https://github.com/omirandag/OSMnx_extract_rails/blob/main/Imagenes/GEOJSON.png"> Fuente: QGIS.
 
 Finalmente, los archivos fueron guardados en una carpeta en *C:/* con el proposito de ser leidos en *Jupyter Lab* mediante el código `gpd.read_file()`. Una vez recopilada esa información, se usó *Jupyter Lab* para extraer las redes de las zonas metropolitanas de México. El primer paso consistió en importar las siguientes librerías: 
 
